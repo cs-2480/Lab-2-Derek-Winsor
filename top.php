@@ -4,13 +4,6 @@ $phpSelf = htmlentities($_SERVER['PHP_SELF'], ENT_QUOTES, "UTF-8");
 
 $path_parts = pathinfo($phpSelf);
 
-
-$databaseName = 'DPWINSOR_cs008-lab8';
-$dsn = 'mysql:host=webdb.uvm.edu;dbname=' . $databaseName;
-$dbUserName = "dpwinsor_writer"; 
-$dbPassword = "c2R8GrgrNlYOssLc";
-
-$pdo = new PDO($dsn, $dbUserName, $dbPassword);
 ?>
 
 
@@ -29,6 +22,7 @@ $pdo = new PDO($dsn, $dbUserName, $dbPassword);
     
 <?php
 print '<body id="' . $path_parts['filename'] . '">';
+include("database-connect.php");
 include("header.php");
 include("nav.php");
 ?>
