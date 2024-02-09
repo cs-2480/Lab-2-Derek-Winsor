@@ -1,26 +1,9 @@
 <?php
 include('top.php');
 ?>
-<html>
-    
-        <?php
-        $sql = 'SELECT fldStateId, fldState, fldJoined from tblStates';
-
-        $statement = $pdo->prepare($sql);
-        $statement->execute();
-        $rows = $statement->fetchAll();
-
-        print '<select name="userState" size="5">';
-        foreach ($rows as $row) {
-            print '<option>' . $row['fldState'] . '</option>';
-        }
-        print '</select>';
-    
-        
-
-
-
-
+<body>
+    <?php
+    include('header.php');
         $dataIsGood = false;
 
         function getData($field) {
@@ -71,7 +54,7 @@ include('top.php');
             if ($dataIsGood) {
                 // save the data
                 try {
-                    $sql = 'INSERT INTO tblUserInfo(fldEmail, fldState) VALUES (?, ?)';
+                    $sql = 'INSERT INTO tblCS2480_UserInfo(fldEmail, fldState) VALUES (?, ?)';
                     $statement = $pdo->prepare($sql);
                     $params = [$email, $state];
                     $statement->execute($params);
