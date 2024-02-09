@@ -1,9 +1,27 @@
 <?php
-include("top.php");
+include('top.php');
 ?>
-<main>
-    <h2>Form page </h2>
-</main>
+<html>
     
-<?php include ("footer.php"); ?>
+        <?php
+        $sql = 'SELECT fldStateId, fldState, fldJoined from tblCS2480_lab_2_states';
+
+        $statement = $pdo->prepare($sql);
+        $statement->execute();
+        $rows = $statement->fetchAll();
+
+        print '<select name="userState" size="5">';
+        foreach ($rows as $row) {
+            print '<option>' . $row['fldState'] . '</option>';
+        }
+        print '</select>';
+    
+        ?>
+
+        
+        <?php
+        include('footer.php');
+        ?>
+</body>
+</html>
 
