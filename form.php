@@ -133,6 +133,7 @@ include('top.php');
                         print '<option>' . $row['fldState'] . '</option>';
                     }
                     print '</select>';
+                    ?>
                 </fieldset>
                 <input type="submit" value="Submit" name="btnSubmit">
             </form>
