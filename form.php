@@ -54,7 +54,7 @@ include('top.php');
             if ($dataIsGood) {
                 // save the data
                 try {
-                    $sql = 'INSERT INTO tblCS2480_UserInfo(fldEmail, fldState) VALUES (?, ?)';
+                    $sql = 'INSERT INTO tblUserInfo(fldEmail, fldState) VALUES (?, ?)';
                     $statement = $pdo->prepare($sql);
                     $params = [$email, $state];
                     $statement->execute($params);
@@ -105,7 +105,7 @@ include('top.php');
                 <fieldset>
                     <legend>Please select your state</legend>
                     <?php
-                    $sql = 'SELECT fldStateId, fldState, fldJoined from tblCS2480_lab_2_states';
+                    $sql = 'SELECT fldStateId, fldState, fldJoined from tblStates';
 
                     $statement = $pdo->prepare($sql);
                     $statement->execute();
