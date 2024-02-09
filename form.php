@@ -116,7 +116,7 @@ include('top.php');
                     $statement->execute();
                     $rows = $statement->fetchAll();
 
-                    print '<select name="fldState" size="5">';
+                    print '<select name="txtState" size="5">';
                     foreach ($rows as $row) {
                         print '<option>' . $row['fldState'] . '</option>';
                     }
