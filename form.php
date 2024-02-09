@@ -30,6 +30,11 @@ include('top.php');
             
             $email = getData("txtEmail");
             $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+            $state = getData("txtState");
+            $state = filter_var($state, FILTER_SANITIZE_STRING);
+            
+                             
             
 
             
